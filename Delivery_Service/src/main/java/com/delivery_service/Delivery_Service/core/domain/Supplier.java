@@ -20,10 +20,6 @@ public class Supplier {
     @Column(name = "owner_name")
     private String ownerName;
 
-    @Pattern(
-            regexp = "\\d{14}/\\d{4}",
-            message = "Document must follow the pattern: 1432132123891/0001"
-    )
     @Column(name = "document", unique = true)
     private String document;
 
@@ -69,17 +65,11 @@ public class Supplier {
         this.ownerName = ownerName;
     }
 
-    public @Pattern(
-            regexp = "\\d{14}/\\d{4}",
-            message = "O documento deve seguir o formato: 1432132123891/0001"
-    ) String getDocument() {
+    public String getDocument() {
         return document;
     }
 
-    public void setDocument(@Pattern(
-            regexp = "\\d{14}/\\d{4}",
-            message = "O documento deve seguir o formato: 1432132123891/0001"
-    ) String document) {
+    public void setDocument(String document) {
         this.document = document;
     }
 
